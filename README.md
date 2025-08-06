@@ -1,1 +1,25 @@
 # FlashArb
+
+## App Analysis and Ratings
+
+| Metric | Rating (1-10) | Notes |
+|-------|---------------|-------|
+| Innovation | 6 | Mobile flash-loan arbitrage is an uncommon concept but currently underdeveloped. |
+| Monetization | 2 | No monetization strategy or revenue features implemented. |
+| Creativity | 5 | Combining DeFi with an iOS interface shows promise but lacks execution. |
+| Scalability | 4 | Lacks backend and multi-exchange support to grow beyond a prototype. |
+| User Engagement | 3 | Interface and real-time feedback are absent, reducing user retention. |
+
+## Improvements Implemented
+
+- Added foundational arbitrage engine components:
+  - `ArbitrageOpportunity` model to describe trades and profit.
+  - `ArbitrageService` for scanning market quotes and discovering opportunities.
+  - `Portfolio` model for tracking token balances.
+
+## Next Steps Toward 10/10
+
+- Integrate with real exchange APIs for live pricing.
+- Build an engaging dashboard and execution flow.
+- Introduce subscription or fee-based monetization model.
+- Expand analytics and risk management features for advanced users.
