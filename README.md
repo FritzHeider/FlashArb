@@ -13,9 +13,13 @@
 ## Improvements Implemented
 
 - Added foundational arbitrage engine components:
-  - `ArbitrageOpportunity` model to describe trades and profit.
-  - `ArbitrageService` for scanning market quotes and discovering opportunities.
-  - `Portfolio` model for tracking token balances.
+- `ArbitrageOpportunity` model to describe trades and profit.
+- `ArbitrageService` for scanning market quotes and discovering opportunities.
+- `Portfolio` model for tracking token balances.
+- Enhanced `Portfolio` with trade history and P&L calculations.
+- Introduced `RiskCalculator` for VaR, drawdown, and leverage metrics.
+- Added `PerformanceDashboard` for charting and report exports.
+- Implemented configurable alerts for exposure and volatility limits.
 
 ## Next Steps Toward 10/10
 
