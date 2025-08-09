@@ -7,6 +7,7 @@ struct DashboardView: View {
     @State private var executingOpportunity: ArbitrageOpportunity?
     @State private var showConfirmation = false
     @State private var executionStatus: String?
+    @State private var showPaywall = false
 
     var body: some View {
         NavigationView {
@@ -69,6 +70,9 @@ struct DashboardView: View {
                 }
             }
             .navigationTitle("Dashboard")
+            .toolbar {
+                Button("Upgrade") { showPaywall = true }
+            }
             .confirmationDialog("Execute trade?", isPresented: $showConfirmation, presenting: executingOpportunity) { opp in
                 Button("Confirm") {
                     executionStatus = "Executing..."
@@ -79,6 +83,9 @@ struct DashboardView: View {
                 Button("Cancel", role: .cancel) { }
             } message: { _ in
                 Text("Confirm trade execution")
+            }
+            .sheet(isPresented: $showPaywall) {
+                PaywallView(tier: .premium)
             }
         }
     }
@@ -105,19 +112,22 @@ final class DashboardViewModel: ObservableObject {
         timer = Timer.publish(every: 5.0, on: .main, in: .common)
             .autoconnect()
             .sink { [weak self] _ in
-                self?.refreshData()
+                Task { await self?.refreshData() }
             }
-        refreshData()
+        Task { await refreshData() }
     }
 
-    private func refreshData() {
-        // In a real app this would pull from network/exchange APIs.
-        let sampleQuotes = [
-            MarketQuote(exchange: "DexA", tokenPair: "ETH/DAI", price: Double.random(in: 1800...2200)),
-            MarketQuote(exchange: "DexB", tokenPair: "ETH/DAI", price: Double.random(in: 1800...2200))
-        ]
-        quotes = sampleQuotes
-        opportunities = service.findOpportunities(quotes: sampleQuotes)
+    private func refreshData() async {
+        do {
+            let pair = "ETH/DAI"
+            let fetched = try await service.fetchQuotes(for: pair)
+            await MainActor.run {
+                self.quotes = fetched
+                self.opportunities = service.findOpportunities(quotes: fetched)
+            }
+        } catch {
+            print("Failed to fetch quotes: \(error)")
+        }
     }
 
     /// Executes an arbitrage opportunity, wiring to a future smart-contract or exchange API.

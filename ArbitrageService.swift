@@ -6,14 +6,6 @@ struct MarketQuote {
     let price: Double
 }
 
-struct ArbitrageOpportunity {
-    let tokenPair: String
-    let buyExchange: String
-    let sellExchange: String
-    let buyPrice: Double
-    let sellPrice: Double
-}
-
 class ArbitrageService {
     private let adapters: [ExchangeAdapter]
     private let subscriptionManager = SubscriptionManager.shared
@@ -24,10 +16,19 @@ class ArbitrageService {
         self.adapters = adapters
     }
 
-    func findOpportunities(for pair: String, minProfit: Double = 0) async throws -> [ArbitrageOpportunity] {
+    convenience init() {
+        let client = ExchangeAPIClient()
+        let defaultAdapters: [ExchangeAdapter] = [
+            BinanceAdapter(client: client),
+            CoinbaseAdapter(client: client)
+        ]
+        self.init(adapters: defaultAdapters)
+    }
+
+    func fetchQuotes(for pair: String) async throws -> [MarketQuote] {
         guard checkRateLimit() else { return [] }
 
-        let quotes = try await withThrowingTaskGroup(of: MarketQuote.self) { group in
+        return try await withThrowingTaskGroup(of: MarketQuote.self) { group in
             for adapter in adapters {
                 group.addTask {
                     try await adapter.fetchTicker(pair: pair)
@@ -40,11 +41,14 @@ class ArbitrageService {
             }
             return results
         }
-
-        return evaluate(quotes: quotes, minProfit: minProfit)
     }
 
-    private func evaluate(quotes: [MarketQuote], minProfit: Double = 0) -> [ArbitrageOpportunity] {
+    func findOpportunities(for pair: String, minProfit: Double = 0) async throws -> [ArbitrageOpportunity] {
+        let quotes = try await fetchQuotes(for: pair)
+        return findOpportunities(quotes: quotes, minProfit: minProfit)
+    }
+
+    func findOpportunities(quotes: [MarketQuote], minProfit: Double = 0) -> [ArbitrageOpportunity] {
         var opportunities: [ArbitrageOpportunity] = []
         let grouped = Dictionary(grouping: quotes, by: { $0.tokenPair })
 
