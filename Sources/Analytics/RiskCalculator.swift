@@ -11,6 +11,18 @@ struct RiskCalculator {
         return -min(varValue, 0) // express as positive potential loss
     }
 
+    /// Conditional Value at Risk (Expected Shortfall) representing average loss beyond VaR.
+    static func expectedShortfall(returns: [Double], confidenceLevel: Double = 0.95) -> Double {
+        guard !returns.isEmpty else { return 0 }
+        let sorted = returns.sorted()
+        let limit = Int(Double(sorted.count) * (1 - confidenceLevel))
+        let tail = sorted.prefix(limit + 1)
+        let losses = tail.filter { $0 < 0 }
+        guard !losses.isEmpty else { return 0 }
+        let avg = losses.reduce(0, +) / Double(losses.count)
+        return -avg
+    }
+
     /// Maximum drawdown for a given equity curve.
     static func maxDrawdown(equityCurve: [Double]) -> Double {
         guard !equityCurve.isEmpty else { return 0 }
