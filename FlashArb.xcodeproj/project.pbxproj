@@ -7,50 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B21BEFAE2E4380E900EDBF92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFAD2E4380E900EDBF92 /* AppDelegate.swift */; };
-		B21BEFB02E4380E900EDBF92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFAF2E4380E900EDBF92 /* SceneDelegate.swift */; };
-		B21BEFB22E4380E900EDBF92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFB12E4380E900EDBF92 /* ViewController.swift */; };
-		B21BEFB52E4380E900EDBF92 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B21BEFB42E4380E900EDBF92 /* Base */; };
-		B21BEFB72E4380EB00EDBF92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B21BEFB62E4380EB00EDBF92 /* Assets.xcassets */; };
-		B21BEFBA2E4380EB00EDBF92 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B21BEFB92E4380EB00EDBF92 /* Base */; };
-		B21BEFCD2E43814D00EDBF92 /* PortfolioSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC12E43814D00EDBF92 /* PortfolioSummaryView.swift */; };
-		B21BEFCE2E43814D00EDBF92 /* FlashLoanExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC22E43814D00EDBF92 /* FlashLoanExecutor.swift */; };
-		B21BEFCF2E43814D00EDBF92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC32E43814D00EDBF92 /* AppDelegate.swift */; };
-		B21BEFD02E43814D00EDBF92 /* ArbitrageOpportunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC42E43814D00EDBF92 /* ArbitrageOpportunity.swift */; };
-		B21BEFD12E43814D00EDBF92 /* ExecutorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC52E43814D00EDBF92 /* ExecutorViewController.swift */; };
-		B21BEFD22E43814D00EDBF92 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC62E43814D00EDBF92 /* DashboardViewController.swift */; };
-		B21BEFD32E43814D00EDBF92 /* OpportunityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC72E43814D00EDBF92 /* OpportunityTableViewCell.swift */; };
-		B21BEFD42E43814D00EDBF92 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC82E43814D00EDBF92 /* MainTabBarController.swift */; };
-		B21BEFD52E43814D00EDBF92 /* ArbitrageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC92E43814D00EDBF92 /* ArbitrageService.swift */; };
-		B21BEFD62E43814D00EDBF92 /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFCA2E43814D00EDBF92 /* Portfolio.swift */; };
-		B21BEFD72E43814D00EDBF92 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFCB2E43814D00EDBF92 /* ScannerViewController.swift */; };
-		B21BEFD82E43814D00EDBF92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFCC2E43814D00EDBF92 /* SceneDelegate.swift */; };
-		B21BEFD92E4381D000EDBF92 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B21BEFBB2E4380EB00EDBF92 /* Info.plist */; };
-		B21BEFDA2E4381DA00EDBF92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21BEFB82E4380EB00EDBF92 /* LaunchScreen.storyboard */; };
-		B21BEFDB2E4381E500EDBF92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21BEFB32E4380E900EDBF92 /* Main.storyboard */; };
+                B21BEFAE2E4380E900EDBF92 /* FlashArbApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFAD2E4380E900EDBF92 /* FlashArbApp.swift */; };
+                B21BEFCD2E43814D00EDBF92 /* ExchangeAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC12E43814D00EDBF92 /* ExchangeAPIClient.swift */; };
+                B21BEFCE2E43814D00EDBF92 /* ExchangeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC22E43814D00EDBF92 /* ExchangeAdapter.swift */; };
+                B21BEFCF2E43814D00EDBF92 /* BinanceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC32E43814D00EDBF92 /* BinanceAdapter.swift */; };
+                B21BEFD02E43814D00EDBF92 /* ArbitrageOpportunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC42E43814D00EDBF92 /* ArbitrageOpportunity.swift */; };
+                B21BEFD12E43814D00EDBF92 /* CoinbaseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC52E43814D00EDBF92 /* CoinbaseAdapter.swift */; };
+                B21BEFD22E43814D00EDBF92 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC62E43814D00EDBF92 /* DashboardView.swift */; };
+                B21BEFD42E43814D00EDBF92 /* PerformanceDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC72E43814D00EDBF92 /* PerformanceDashboard.swift */; };
+                B21BEFD52E43814D00EDBF92 /* ArbitrageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC92E43814D00EDBF92 /* ArbitrageService.swift */; };
+                B21BEFD62E43814D00EDBF92 /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFCA2E43814D00EDBF92 /* Portfolio.swift */; };
+                B21BEFD72E43814D00EDBF92 /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFCB2E43814D00EDBF92 /* SubscriptionManager.swift */; };
+                B21BEFD82E43814D00EDBF92 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFCC2E43814D00EDBF92 /* PaywallView.swift */; };
+                B21BEFD92E4381D000EDBF92 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B21BEFBB2E4380EB00EDBF92 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B21BEFAA2E4380E900EDBF92 /* FlashArb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashArb.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B21BEFAD2E4380E900EDBF92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B21BEFAF2E4380E900EDBF92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B21BEFB12E4380E900EDBF92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B21BEFB42E4380E900EDBF92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B21BEFB62E4380EB00EDBF92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B21BEFB92E4380EB00EDBF92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+                B21BEFAD2E4380E900EDBF92 /* FlashArbApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashArbApp.swift; sourceTree = "<group>"; };
 		B21BEFBB2E4380EB00EDBF92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B21BEFC12E43814D00EDBF92 /* PortfolioSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioSummaryView.swift; sourceTree = "<group>"; };
-		B21BEFC22E43814D00EDBF92 /* FlashLoanExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashLoanExecutor.swift; sourceTree = "<group>"; };
-		B21BEFC32E43814D00EDBF92 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "../../../Downloads/Build a Flash Loan Arbitrage Bot Course Outline (7)/AppDelegate.swift"; sourceTree = "<group>"; };
+                B21BEFC12E43814D00EDBF92 /* ExchangeAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources/Networking/ExchangeAPIClient.swift; sourceTree = "<group>"; };
+                B21BEFC22E43814D00EDBF92 /* ExchangeAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources/Networking/ExchangeAdapter.swift; sourceTree = "<group>"; };
+                B21BEFC32E43814D00EDBF92 /* BinanceAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources/Networking/BinanceAdapter.swift; sourceTree = "<group>"; };
 		B21BEFC42E43814D00EDBF92 /* ArbitrageOpportunity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArbitrageOpportunity.swift; sourceTree = "<group>"; };
-		B21BEFC52E43814D00EDBF92 /* ExecutorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutorViewController.swift; sourceTree = "<group>"; };
-		B21BEFC62E43814D00EDBF92 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		B21BEFC72E43814D00EDBF92 /* OpportunityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpportunityTableViewCell.swift; sourceTree = "<group>"; };
-		B21BEFC82E43814D00EDBF92 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+                B21BEFC52E43814D00EDBF92 /* CoinbaseAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources/Networking/CoinbaseAdapter.swift; sourceTree = "<group>"; };
+                B21BEFC62E43814D00EDBF92 /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources/UI/Dashboard/DashboardView.swift; sourceTree = "<group>"; };
+                B21BEFC72E43814D00EDBF92 /* PerformanceDashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources/Dashboard/PerformanceDashboard.swift; sourceTree = "<group>"; };
 		B21BEFC92E43814D00EDBF92 /* ArbitrageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArbitrageService.swift; sourceTree = "<group>"; };
 		B21BEFCA2E43814D00EDBF92 /* Portfolio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
-		B21BEFCB2E43814D00EDBF92 /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
-		B21BEFCC2E43814D00EDBF92 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = "../../../Downloads/Build a Flash Loan Arbitrage Bot Course Outline (7)/SceneDelegate.swift"; sourceTree = "<group>"; };
+                B21BEFCB2E43814D00EDBF92 /* SubscriptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources/Monetization/SubscriptionManager.swift; sourceTree = "<group>"; };
+                B21BEFCC2E43814D00EDBF92 /* PaywallView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources/Monetization/PaywallView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,32 +66,26 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B21BEFAC2E4380E900EDBF92 /* FlashArb */ = {
-			isa = PBXGroup;
-			children = (
-				B21BEFAD2E4380E900EDBF92 /* AppDelegate.swift */,
-				B21BEFAF2E4380E900EDBF92 /* SceneDelegate.swift */,
-				B21BEFC32E43814D00EDBF92 /* AppDelegate.swift */,
-				B21BEFC42E43814D00EDBF92 /* ArbitrageOpportunity.swift */,
-				B21BEFC92E43814D00EDBF92 /* ArbitrageService.swift */,
-				B21BEFC62E43814D00EDBF92 /* DashboardViewController.swift */,
-				B21BEFC52E43814D00EDBF92 /* ExecutorViewController.swift */,
-				B21BEFC22E43814D00EDBF92 /* FlashLoanExecutor.swift */,
-				B21BEFC82E43814D00EDBF92 /* MainTabBarController.swift */,
-				B21BEFC72E43814D00EDBF92 /* OpportunityTableViewCell.swift */,
-				B21BEFCA2E43814D00EDBF92 /* Portfolio.swift */,
-				B21BEFC12E43814D00EDBF92 /* PortfolioSummaryView.swift */,
-				B21BEFCB2E43814D00EDBF92 /* ScannerViewController.swift */,
-				B21BEFCC2E43814D00EDBF92 /* SceneDelegate.swift */,
-				B21BEFB12E4380E900EDBF92 /* ViewController.swift */,
-				B21BEFB32E4380E900EDBF92 /* Main.storyboard */,
-				B21BEFB62E4380EB00EDBF92 /* Assets.xcassets */,
-				B21BEFB82E4380EB00EDBF92 /* LaunchScreen.storyboard */,
-				B21BEFBB2E4380EB00EDBF92 /* Info.plist */,
-			);
-			path = FlashArb;
-			sourceTree = "<group>";
-		};
+                B21BEFAC2E4380E900EDBF92 /* FlashArb */ = {
+                        isa = PBXGroup;
+                        children = (
+                                B21BEFAD2E4380E900EDBF92 /* FlashArbApp.swift */,
+                                B21BEFC42E43814D00EDBF92 /* ArbitrageOpportunity.swift */,
+                                B21BEFC92E43814D00EDBF92 /* ArbitrageService.swift */,
+                                B21BEFCA2E43814D00EDBF92 /* Portfolio.swift */,
+                                B21BEFC12E43814D00EDBF92 /* ExchangeAPIClient.swift */,
+                                B21BEFC22E43814D00EDBF92 /* ExchangeAdapter.swift */,
+                                B21BEFC32E43814D00EDBF92 /* BinanceAdapter.swift */,
+                                B21BEFC52E43814D00EDBF92 /* CoinbaseAdapter.swift */,
+                                B21BEFC62E43814D00EDBF92 /* DashboardView.swift */,
+                                B21BEFC72E43814D00EDBF92 /* PerformanceDashboard.swift */,
+                                B21BEFCB2E43814D00EDBF92 /* SubscriptionManager.swift */,
+                                B21BEFCC2E43814D00EDBF92 /* PaywallView.swift */,
+                                B21BEFBB2E4380EB00EDBF92 /* Info.plist */,
+                        );
+                        path = "";
+                        sourceTree = "<group>";
+                };
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,14 +143,9 @@
 		B21BEFA82E4380E900EDBF92 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
-			files = (
-				B21BEFD92E4381D000EDBF92 /* Info.plist in Resources */,
-				B21BEFB72E4380EB00EDBF92 /* Assets.xcassets in Resources */,
-				B21BEFBA2E4380EB00EDBF92 /* Base in Resources */,
-				B21BEFDB2E4381E500EDBF92 /* Main.storyboard in Resources */,
-				B21BEFDA2E4381DA00EDBF92 /* LaunchScreen.storyboard in Resources */,
-				B21BEFB52E4380E900EDBF92 /* Base in Resources */,
-			);
+                        files = (
+                                B21BEFD92E4381D000EDBF92 /* Info.plist in Resources */,
+                        );
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
@@ -179,44 +154,25 @@
 		B21BEFA62E4380E900EDBF92 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
-			files = (
-				B21BEFD62E43814D00EDBF92 /* Portfolio.swift in Sources */,
-				B21BEFCF2E43814D00EDBF92 /* AppDelegate.swift in Sources */,
-				B21BEFD22E43814D00EDBF92 /* DashboardViewController.swift in Sources */,
-				B21BEFD42E43814D00EDBF92 /* MainTabBarController.swift in Sources */,
-				B21BEFCD2E43814D00EDBF92 /* PortfolioSummaryView.swift in Sources */,
-				B21BEFD82E43814D00EDBF92 /* SceneDelegate.swift in Sources */,
-				B21BEFB22E4380E900EDBF92 /* ViewController.swift in Sources */,
-				B21BEFAE2E4380E900EDBF92 /* AppDelegate.swift in Sources */,
-				B21BEFD72E43814D00EDBF92 /* ScannerViewController.swift in Sources */,
-				B21BEFB02E4380E900EDBF92 /* SceneDelegate.swift in Sources */,
-				B21BEFD52E43814D00EDBF92 /* ArbitrageService.swift in Sources */,
-				B21BEFD12E43814D00EDBF92 /* ExecutorViewController.swift in Sources */,
-				B21BEFCE2E43814D00EDBF92 /* FlashLoanExecutor.swift in Sources */,
-				B21BEFD02E43814D00EDBF92 /* ArbitrageOpportunity.swift in Sources */,
-				B21BEFD32E43814D00EDBF92 /* OpportunityTableViewCell.swift in Sources */,
-			);
+                        files = (
+                                B21BEFAE2E4380E900EDBF92 /* FlashArbApp.swift in Sources */,
+                                B21BEFD02E43814D00EDBF92 /* ArbitrageOpportunity.swift in Sources */,
+                                B21BEFD52E43814D00EDBF92 /* ArbitrageService.swift in Sources */,
+                                B21BEFD62E43814D00EDBF92 /* Portfolio.swift in Sources */,
+                                B21BEFCD2E43814D00EDBF92 /* ExchangeAPIClient.swift in Sources */,
+                                B21BEFCE2E43814D00EDBF92 /* ExchangeAdapter.swift in Sources */,
+                                B21BEFCF2E43814D00EDBF92 /* BinanceAdapter.swift in Sources */,
+                                B21BEFD12E43814D00EDBF92 /* CoinbaseAdapter.swift in Sources */,
+                                B21BEFD22E43814D00EDBF92 /* DashboardView.swift in Sources */,
+                                B21BEFD42E43814D00EDBF92 /* PerformanceDashboard.swift in Sources */,
+                                B21BEFD72E43814D00EDBF92 /* SubscriptionManager.swift in Sources */,
+                                B21BEFD82E43814D00EDBF92 /* PaywallView.swift in Sources */,
+                        );
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B21BEFB32E4380E900EDBF92 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B21BEFB42E4380E900EDBF92 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B21BEFB82E4380EB00EDBF92 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B21BEFB92E4380EB00EDBF92 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -347,13 +303,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 36SL876MN9;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FlashArb/Info.plist;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+                            INFOPLIST_FILE = Info.plist;
+                            INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+                            INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+                            INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -376,13 +329,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 36SL876MN9;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FlashArb/Info.plist;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+                            INFOPLIST_FILE = Info.plist;
+                            INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+                            INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+                            INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
