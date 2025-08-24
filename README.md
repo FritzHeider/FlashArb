@@ -1,8 +1,9 @@
  
 
-FlashArb is a prototype iOS application that explores flash-loan arbitrage
-opportunities across decentralized exchanges. The project currently focuses on
-foundational components and does not yet integrate with live trading APIs.
+FlashArb is a prototype SwiftUI-based iOS application that explores flash-loan
+arbitrage opportunities across decentralized exchanges. The project currently
+focuses on foundational components and does not yet integrate with live trading
+APIs.
 
 ## Getting Started
 
