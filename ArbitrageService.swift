@@ -70,9 +70,13 @@ final class ArbitrageService {
         }
     }
 
+    func findOpportunities(quotes: [MarketQuote], minProfit: Double = 0) -> [ArbOpportunity] {
+        ArbDetector.detect(quotes: quotes, minProfit: minProfit)
+    }
+
     func findOpportunities(for pair: String, minProfit: Double = 0) async throws -> [ArbOpportunity] {
         guard await isSubscribed(.standard) else { return [] }
         let quotes = try await fetchQuotes(for: pair)
-        return ArbDetector.detect(quotes: quotes, minProfit: minProfit)
+        return findOpportunities(quotes: quotes, minProfit: minProfit)
     }
 }
