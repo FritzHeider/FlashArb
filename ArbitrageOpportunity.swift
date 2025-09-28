@@ -1,13 +1,15 @@
 import Foundation
 
-struct ArbitrageOpportunity {
-    let tokenPair: String
-    let buyExchange: String
-    let sellExchange: String
-    let buyPrice: Double
-    let sellPrice: Double
+public struct ArbOpportunity: Identifiable, Hashable, Sendable {
+    public let id = UUID()
+    public let pair: String
+    public let buyExchange: String
+    public let sellExchange: String
+    public let buyPrice: Double
+    public let sellPrice: Double
+    public let timestamp: Date
 
-    var profit: Double {
-        sellPrice - buyPrice
-    }
+    public var spread: Double { sellPrice - buyPrice }
+    /// e.g. 0.012 = 1.2%
+    public var spreadPct: Double { (sellPrice - buyPrice) / buyPrice }
 }

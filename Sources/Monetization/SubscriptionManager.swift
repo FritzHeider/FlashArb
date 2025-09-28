@@ -11,16 +11,16 @@ enum SubscriptionTier: Int, CaseIterable, Comparable {
     var productID: String? {
         switch self {
         case .free: return nil
-        case .standard: return "com.flasharb.standard"
-        case .premium: return "com.flasharb.premium"
+        case .standard: return "com.flasharb.standard"   // ← ensure exact IDs
+        case .premium:  return "com.flasharb.premium"
         }
     }
 
     var displayName: String {
         switch self {
-        case .free: return "Free"
+        case .free:     return "Free"
         case .standard: return "Standard"
-        case .premium: return "Premium"
+        case .premium:  return "Premium"
         }
     }
 
@@ -29,11 +29,20 @@ enum SubscriptionTier: Int, CaseIterable, Comparable {
     }
 }
 
-final class SubscriptionManager {
+@MainActor
+final class SubscriptionManager: ObservableObject {
     static let shared = SubscriptionManager()
-    private(set) var currentTier: SubscriptionTier = .free
 
-    private init() {}
+    @Published private(set) var currentTier: SubscriptionTier = .free
+
+    #if canImport(StoreKit)
+    private let paidProductIDs: Set<String> = [
+        "com.flasharb.standard",
+        "com.flasharb.premium"
+    ]
+    #endif
+
+    private init() { }
 
     func isSubscribed(to tier: SubscriptionTier) -> Bool {
         currentTier.rawValue >= tier.rawValue
@@ -41,36 +50,74 @@ final class SubscriptionManager {
 
     func rateLimit(for tier: SubscriptionTier) -> Int {
         switch tier {
-        case .free: return 60
+        case .free:     return 60
         case .standard: return 600
-        case .premium: return 6000
+        case .premium:  return 6000
         }
     }
 
+    // MARK: - Purchase
+
     func purchase(_ tier: SubscriptionTier) async throws {
-#if canImport(StoreKit)
+        #if canImport(StoreKit)
         guard let productID = tier.productID else { return }
         let products = try await Product.products(for: [productID])
         guard let product = products.first else { return }
+
         let result = try await product.purchase()
         switch result {
         case .success(let verification):
-            if case .verified(let transaction) = verification {
-                await transaction.finish()
-                self.currentTier = tier
-            }
-        default: break
+            guard case .verified(let transaction) = verification else { break }
+            // Finish and refresh entitlements
+            await transaction.finish()
+            await refreshStatus()
+        case .pending, .userCancelled:
+            break
+        @unknown default:
+            break
         }
-#else
+        #else
         currentTier = tier
-#endif
+        #endif
     }
 
-    func refreshStatus() {
-#if canImport(StoreKit)
-        if !ReceiptValidator().validateReceipt() {
-            self.currentTier = .free
+    // MARK: - Entitlement Refresh (StoreKit 2, no custom validator)
+    @MainActor
+    func refreshStatus() async {
+        #if canImport(StoreKit)
+        var resolvedTier: SubscriptionTier = .free
+
+        for await result in Transaction.currentEntitlements {
+            guard case .verified(let txn) = result else { continue }
+            guard paidProductIDs.contains(txn.productID) else { continue }
+            guard txn.revocationDate == nil else { continue }
+            if let exp = txn.expirationDate, exp < Date() { continue }
+
+            if txn.productID == SubscriptionTier.premium.productID {
+                resolvedTier = .premium
+                break
+            } else if txn.productID == SubscriptionTier.standard.productID {
+                resolvedTier = max(resolvedTier, .standard)
+            }
         }
-#endif
+
+        self.currentTier = resolvedTier
+        #else
+        self.currentTier = .free
+        #endif
+    }
+
+    // MARK: - Live updates (restore, refunds, server-side changes)
+
+    func startListeningForTransactions() {
+        #if canImport(StoreKit)
+        Task.detached { [weak self] in
+            for await update in Transaction.updates {
+                guard case .verified(let txn) = update else { continue }
+                await txn.finish()
+                await self?.refreshStatus()
+            }
+        }
+        #endif
     }
 }

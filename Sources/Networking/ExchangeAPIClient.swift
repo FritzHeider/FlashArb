@@ -1,6 +1,5 @@
 import Foundation
-import FoundationNetworking
-
+ 
 actor RateLimiter {
     private var lastRequest: Date?
     private let minimumInterval: TimeInterval

@@ -7,36 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-                B21BEFAE2E4380E900EDBF92 /* FlashArbApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFAD2E4380E900EDBF92 /* FlashArbApp.swift */; };
-                B21BEFCD2E43814D00EDBF92 /* ExchangeAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC12E43814D00EDBF92 /* ExchangeAPIClient.swift */; };
-                B21BEFCE2E43814D00EDBF92 /* ExchangeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC22E43814D00EDBF92 /* ExchangeAdapter.swift */; };
-                B21BEFCF2E43814D00EDBF92 /* BinanceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC32E43814D00EDBF92 /* BinanceAdapter.swift */; };
-                B21BEFD02E43814D00EDBF92 /* ArbitrageOpportunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC42E43814D00EDBF92 /* ArbitrageOpportunity.swift */; };
-                B21BEFD12E43814D00EDBF92 /* CoinbaseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC52E43814D00EDBF92 /* CoinbaseAdapter.swift */; };
-                B21BEFD22E43814D00EDBF92 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC62E43814D00EDBF92 /* DashboardView.swift */; };
-                B21BEFD42E43814D00EDBF92 /* PerformanceDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC72E43814D00EDBF92 /* PerformanceDashboard.swift */; };
-                B21BEFD52E43814D00EDBF92 /* ArbitrageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFC92E43814D00EDBF92 /* ArbitrageService.swift */; };
-                B21BEFD62E43814D00EDBF92 /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFCA2E43814D00EDBF92 /* Portfolio.swift */; };
-                B21BEFD72E43814D00EDBF92 /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFCB2E43814D00EDBF92 /* SubscriptionManager.swift */; };
-                B21BEFD82E43814D00EDBF92 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BEFCC2E43814D00EDBF92 /* PaywallView.swift */; };
-                B21BEFD92E4381D000EDBF92 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B21BEFBB2E4380EB00EDBF92 /* Info.plist */; };
+		B264EF502E5AA6CC003DC096 /* ArbOpportunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264EF4E2E5AA6CC003DC096 /* ArbOpportunity.swift */; };
+		B264EF662E5AA6EE003DC096 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264EF512E5AA6EE003DC096 /* AlertManager.swift */; };
+		B264EF672E5AA6EE003DC096 /* RiskCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264EF532E5AA6EE003DC096 /* RiskCalculator.swift */; };
+		B264EF682E5AA6EE003DC096 /* PerformanceDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264EF552E5AA6EE003DC096 /* PerformanceDashboard.swift */; };
+		B264EF692E5AA6EE003DC096 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264EF572E5AA6EE003DC096 /* PaywallView.swift */; };
+		B264EF6A2E5AA6EE003DC096 /* ReceiptValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264EF582E5AA6EE003DC096 /* ReceiptValidator.swift */; };
+		B264EF6B2E5AA6EE003DC096 /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264EF592E5AA6EE003DC096 /* SubscriptionManager.swift */; };
+		B264EF6C2E5AA6EE003DC096 /* BinanceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264EF5B2E5AA6EE003DC096 /* BinanceAdapter.swift */; };
+		B264EF6D2E5AA6EE003DC096 /* CoinbaseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264EF5C2E5AA6EE003DC096 /* CoinbaseAdapter.swift */; };
+		B264EF6E2E5AA6EE003DC096 /* ExchangeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264EF5D2E5AA6EE003DC096 /* ExchangeAdapter.swift */; };
+		B264EF6F2E5AA6EE003DC096 /* ExchangeAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264EF5E2E5AA6EE003DC096 /* ExchangeAPIClient.swift */; };
+		B264EF702E5AA6EE003DC096 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264EF602E5AA6EE003DC096 /* SettingsView.swift */; };
+		B264EF712E5AA6EE003DC096 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264EF622E5AA6EE003DC096 /* DashboardView.swift */; };
+		B264EF742E5AA73F003DC096 /* ArbDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264EF722E5AA73F003DC096 /* ArbDetector.swift */; };
+		B264EF992E5AA75C003DC096 /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264EF752E5AA75B003DC096 /* Portfolio.swift */; };
+		B264EF9B2E5AA75C003DC096 /* ArbitrageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264EF7A2E5AA75B003DC096 /* ArbitrageService.swift */; };
+		B264EFA92E5AA75C003DC096 /* FlashArbApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264EF922E5AA75B003DC096 /* FlashArbApp.swift */; };
+		B264EFAA2E5AA75C003DC096 /* ArbitrageOpportunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264EF982E5AA75C003DC096 /* ArbitrageOpportunity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B21BEFAA2E4380E900EDBF92 /* FlashArb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashArb.app; sourceTree = BUILT_PRODUCTS_DIR; };
-                B21BEFAD2E4380E900EDBF92 /* FlashArbApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashArbApp.swift; sourceTree = "<group>"; };
-		B21BEFBB2E4380EB00EDBF92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-                B21BEFC12E43814D00EDBF92 /* ExchangeAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources/Networking/ExchangeAPIClient.swift; sourceTree = "<group>"; };
-                B21BEFC22E43814D00EDBF92 /* ExchangeAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources/Networking/ExchangeAdapter.swift; sourceTree = "<group>"; };
-                B21BEFC32E43814D00EDBF92 /* BinanceAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources/Networking/BinanceAdapter.swift; sourceTree = "<group>"; };
-		B21BEFC42E43814D00EDBF92 /* ArbitrageOpportunity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArbitrageOpportunity.swift; sourceTree = "<group>"; };
-                B21BEFC52E43814D00EDBF92 /* CoinbaseAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources/Networking/CoinbaseAdapter.swift; sourceTree = "<group>"; };
-                B21BEFC62E43814D00EDBF92 /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources/UI/Dashboard/DashboardView.swift; sourceTree = "<group>"; };
-                B21BEFC72E43814D00EDBF92 /* PerformanceDashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources/Dashboard/PerformanceDashboard.swift; sourceTree = "<group>"; };
-		B21BEFC92E43814D00EDBF92 /* ArbitrageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArbitrageService.swift; sourceTree = "<group>"; };
-		B21BEFCA2E43814D00EDBF92 /* Portfolio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
-                B21BEFCB2E43814D00EDBF92 /* SubscriptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources/Monetization/SubscriptionManager.swift; sourceTree = "<group>"; };
-                B21BEFCC2E43814D00EDBF92 /* PaywallView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sources/Monetization/PaywallView.swift; sourceTree = "<group>"; };
+		B264EF4E2E5AA6CC003DC096 /* ArbOpportunity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArbOpportunity.swift; sourceTree = "<group>"; };
+		B264EF512E5AA6EE003DC096 /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		B264EF532E5AA6EE003DC096 /* RiskCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskCalculator.swift; sourceTree = "<group>"; };
+		B264EF552E5AA6EE003DC096 /* PerformanceDashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceDashboard.swift; sourceTree = "<group>"; };
+		B264EF572E5AA6EE003DC096 /* PaywallView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		B264EF582E5AA6EE003DC096 /* ReceiptValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptValidator.swift; sourceTree = "<group>"; };
+		B264EF592E5AA6EE003DC096 /* SubscriptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
+		B264EF5B2E5AA6EE003DC096 /* BinanceAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinanceAdapter.swift; sourceTree = "<group>"; };
+		B264EF5C2E5AA6EE003DC096 /* CoinbaseAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinbaseAdapter.swift; sourceTree = "<group>"; };
+		B264EF5D2E5AA6EE003DC096 /* ExchangeAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeAdapter.swift; sourceTree = "<group>"; };
+		B264EF5E2E5AA6EE003DC096 /* ExchangeAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeAPIClient.swift; sourceTree = "<group>"; };
+		B264EF602E5AA6EE003DC096 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B264EF622E5AA6EE003DC096 /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		B264EF722E5AA73F003DC096 /* ArbDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArbDetector.swift; sourceTree = "<group>"; };
+		B264EF752E5AA75B003DC096 /* Portfolio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
+		B264EF782E5AA75B003DC096 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B264EF792E5AA75B003DC096 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B264EF7A2E5AA75B003DC096 /* ArbitrageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArbitrageService.swift; sourceTree = "<group>"; };
+		B264EF922E5AA75B003DC096 /* FlashArbApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashArbApp.swift; sourceTree = "<group>"; };
+		B264EF932E5AA75B003DC096 /* project.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = project.xcworkspace; sourceTree = "<group>"; };
+		B264EF942E5AA75B003DC096 /* xcschememanagement.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xcschememanagement.plist; sourceTree = "<group>"; };
+		B264EF982E5AA75C003DC096 /* ArbitrageOpportunity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArbitrageOpportunity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +67,18 @@
 		B21BEFA12E4380E900EDBF92 = {
 			isa = PBXGroup;
 			children = (
-				B21BEFAC2E4380E900EDBF92 /* FlashArb */,
+				B264EF932E5AA75B003DC096 /* project.xcworkspace */,
+				B264EF782E5AA75B003DC096 /* README.md */,
+				B264EF732E5AA73F003DC096 /* Services */,
+				B264EF652E5AA6EE003DC096 /* Sources */,
+				B264EF4F2E5AA6CC003DC096 /* Models */,
+				B264EF982E5AA75C003DC096 /* ArbitrageOpportunity.swift */,
+				B264EF7A2E5AA75B003DC096 /* ArbitrageService.swift */,
+				B264EF922E5AA75B003DC096 /* FlashArbApp.swift */,
+				B264EF792E5AA75B003DC096 /* Info.plist */,
+				B264EF752E5AA75B003DC096 /* Portfolio.swift */,
+				B264EF962E5AA75B003DC096 /* space.xcuserdatad */,
+				B264EF972E5AA75B003DC096 /* xcuserdata */,
 				B21BEFAB2E4380E900EDBF92 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,26 +91,128 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-                B21BEFAC2E4380E900EDBF92 /* FlashArb */ = {
-                        isa = PBXGroup;
-                        children = (
-                                B21BEFAD2E4380E900EDBF92 /* FlashArbApp.swift */,
-                                B21BEFC42E43814D00EDBF92 /* ArbitrageOpportunity.swift */,
-                                B21BEFC92E43814D00EDBF92 /* ArbitrageService.swift */,
-                                B21BEFCA2E43814D00EDBF92 /* Portfolio.swift */,
-                                B21BEFC12E43814D00EDBF92 /* ExchangeAPIClient.swift */,
-                                B21BEFC22E43814D00EDBF92 /* ExchangeAdapter.swift */,
-                                B21BEFC32E43814D00EDBF92 /* BinanceAdapter.swift */,
-                                B21BEFC52E43814D00EDBF92 /* CoinbaseAdapter.swift */,
-                                B21BEFC62E43814D00EDBF92 /* DashboardView.swift */,
-                                B21BEFC72E43814D00EDBF92 /* PerformanceDashboard.swift */,
-                                B21BEFCB2E43814D00EDBF92 /* SubscriptionManager.swift */,
-                                B21BEFCC2E43814D00EDBF92 /* PaywallView.swift */,
-                                B21BEFBB2E4380EB00EDBF92 /* Info.plist */,
-                        );
-                        path = "";
-                        sourceTree = "<group>";
-                };
+		B264EF4F2E5AA6CC003DC096 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B264EF4E2E5AA6CC003DC096 /* ArbOpportunity.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B264EF522E5AA6EE003DC096 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				B264EF512E5AA6EE003DC096 /* AlertManager.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
+		B264EF542E5AA6EE003DC096 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				B264EF532E5AA6EE003DC096 /* RiskCalculator.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		B264EF562E5AA6EE003DC096 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				B264EF552E5AA6EE003DC096 /* PerformanceDashboard.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		B264EF5A2E5AA6EE003DC096 /* Monetization */ = {
+			isa = PBXGroup;
+			children = (
+				B264EF572E5AA6EE003DC096 /* PaywallView.swift */,
+				B264EF582E5AA6EE003DC096 /* ReceiptValidator.swift */,
+				B264EF592E5AA6EE003DC096 /* SubscriptionManager.swift */,
+			);
+			path = Monetization;
+			sourceTree = "<group>";
+		};
+		B264EF5F2E5AA6EE003DC096 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B264EF5B2E5AA6EE003DC096 /* BinanceAdapter.swift */,
+				B264EF5C2E5AA6EE003DC096 /* CoinbaseAdapter.swift */,
+				B264EF5D2E5AA6EE003DC096 /* ExchangeAdapter.swift */,
+				B264EF5E2E5AA6EE003DC096 /* ExchangeAPIClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B264EF612E5AA6EE003DC096 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B264EF602E5AA6EE003DC096 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		B264EF632E5AA6EE003DC096 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				B264EF622E5AA6EE003DC096 /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		B264EF642E5AA6EE003DC096 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B264EF632E5AA6EE003DC096 /* Dashboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B264EF652E5AA6EE003DC096 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B264EF522E5AA6EE003DC096 /* Alerts */,
+				B264EF542E5AA6EE003DC096 /* Analytics */,
+				B264EF562E5AA6EE003DC096 /* Dashboard */,
+				B264EF5A2E5AA6EE003DC096 /* Monetization */,
+				B264EF5F2E5AA6EE003DC096 /* Networking */,
+				B264EF612E5AA6EE003DC096 /* Settings */,
+				B264EF642E5AA6EE003DC096 /* UI */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B264EF732E5AA73F003DC096 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B264EF722E5AA73F003DC096 /* ArbDetector.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B264EF952E5AA75B003DC096 /* xcschemes */ = {
+			isa = PBXGroup;
+			children = (
+				B264EF942E5AA75B003DC096 /* xcschememanagement.plist */,
+			);
+			path = xcschemes;
+			sourceTree = "<group>";
+		};
+		B264EF962E5AA75B003DC096 /* space.xcuserdatad */ = {
+			isa = PBXGroup;
+			children = (
+				B264EF952E5AA75B003DC096 /* xcschemes */,
+			);
+			path = space.xcuserdatad;
+			sourceTree = "<group>";
+		};
+		B264EF972E5AA75B003DC096 /* xcuserdata */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = xcuserdata;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -95,7 +222,6 @@
 			buildPhases = (
 				B21BEFA62E4380E900EDBF92 /* Sources */,
 				B21BEFA72E4380E900EDBF92 /* Frameworks */,
-				B21BEFA82E4380E900EDBF92 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -139,41 +265,33 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		B21BEFA82E4380E900EDBF92 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-                        files = (
-                                B21BEFD92E4381D000EDBF92 /* Info.plist in Resources */,
-                        );
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		B21BEFA62E4380E900EDBF92 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
-                        files = (
-                                B21BEFAE2E4380E900EDBF92 /* FlashArbApp.swift in Sources */,
-                                B21BEFD02E43814D00EDBF92 /* ArbitrageOpportunity.swift in Sources */,
-                                B21BEFD52E43814D00EDBF92 /* ArbitrageService.swift in Sources */,
-                                B21BEFD62E43814D00EDBF92 /* Portfolio.swift in Sources */,
-                                B21BEFCD2E43814D00EDBF92 /* ExchangeAPIClient.swift in Sources */,
-                                B21BEFCE2E43814D00EDBF92 /* ExchangeAdapter.swift in Sources */,
-                                B21BEFCF2E43814D00EDBF92 /* BinanceAdapter.swift in Sources */,
-                                B21BEFD12E43814D00EDBF92 /* CoinbaseAdapter.swift in Sources */,
-                                B21BEFD22E43814D00EDBF92 /* DashboardView.swift in Sources */,
-                                B21BEFD42E43814D00EDBF92 /* PerformanceDashboard.swift in Sources */,
-                                B21BEFD72E43814D00EDBF92 /* SubscriptionManager.swift in Sources */,
-                                B21BEFD82E43814D00EDBF92 /* PaywallView.swift in Sources */,
-                        );
+			files = (
+				B264EF692E5AA6EE003DC096 /* PaywallView.swift in Sources */,
+				B264EF6B2E5AA6EE003DC096 /* SubscriptionManager.swift in Sources */,
+				B264EFAA2E5AA75C003DC096 /* ArbitrageOpportunity.swift in Sources */,
+				B264EF6F2E5AA6EE003DC096 /* ExchangeAPIClient.swift in Sources */,
+				B264EF672E5AA6EE003DC096 /* RiskCalculator.swift in Sources */,
+				B264EF6D2E5AA6EE003DC096 /* CoinbaseAdapter.swift in Sources */,
+				B264EF712E5AA6EE003DC096 /* DashboardView.swift in Sources */,
+				B264EF702E5AA6EE003DC096 /* SettingsView.swift in Sources */,
+				B264EF6C2E5AA6EE003DC096 /* BinanceAdapter.swift in Sources */,
+				B264EF6E2E5AA6EE003DC096 /* ExchangeAdapter.swift in Sources */,
+				B264EF992E5AA75C003DC096 /* Portfolio.swift in Sources */,
+				B264EF742E5AA73F003DC096 /* ArbDetector.swift in Sources */,
+				B264EF6A2E5AA6EE003DC096 /* ReceiptValidator.swift in Sources */,
+				B264EFA92E5AA75C003DC096 /* FlashArbApp.swift in Sources */,
+				B264EF662E5AA6EE003DC096 /* AlertManager.swift in Sources */,
+				B264EF502E5AA6CC003DC096 /* ArbOpportunity.swift in Sources */,
+				B264EF9B2E5AA75C003DC096 /* ArbitrageService.swift in Sources */,
+				B264EF682E5AA6EE003DC096 /* PerformanceDashboard.swift in Sources */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B21BEFBC2E4380EB00EDBF92 /* Debug */ = {
@@ -302,11 +420,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 36SL876MN9;
-                            INFOPLIST_FILE = Info.plist;
-                            INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-                            INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-                            INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				DEVELOPMENT_TEAM = CCK3M3DML9;
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -328,11 +446,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 36SL876MN9;
-                            INFOPLIST_FILE = Info.plist;
-                            INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-                            INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-                            INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				DEVELOPMENT_TEAM = CCK3M3DML9;
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

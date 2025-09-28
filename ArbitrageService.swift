@@ -1,4 +1,7 @@
 import Foundation
+#if canImport(StoreKit)
+import StoreKit
+#endif
 
 struct MarketQuote {
     let exchange: String
@@ -6,9 +9,8 @@ struct MarketQuote {
     let price: Double
 }
 
-class ArbitrageService {
+final class ArbitrageService {
     private let adapters: [ExchangeAdapter]
-    private let subscriptionManager = SubscriptionManager.shared
     private var requestsThisMinute = 0
     private var lastReset = Date()
 
@@ -25,74 +27,52 @@ class ArbitrageService {
         self.init(adapters: defaultAdapters)
     }
 
+    // ---- Main-actor hop helpers ----
+    private func isSubscribed(_ tier: SubscriptionTier) async -> Bool {
+        await MainActor.run { SubscriptionManager.shared.isSubscribed(to: tier) }
+    }
+
+    private func rateLimit(for tier: SubscriptionTier) async -> Int {
+        await MainActor.run { SubscriptionManager.shared.rateLimit(for: tier) }
+    }
+
+    private func currentTier() async -> SubscriptionTier {
+        await MainActor.run { SubscriptionManager.shared.currentTier }
+    }
+
+    // ---- Rate-limit ----
+    private func checkRateLimit() async -> Bool {
+        // choose required tier for higher throughput
+        let tier = await currentTier()
+        let limit = await rateLimit(for: tier)
+
+        let now = Date()
+        if now.timeIntervalSince(lastReset) >= 60 {
+            lastReset = now
+            requestsThisMinute = 0
+        }
+        guard requestsThisMinute < limit else { return false }
+        requestsThisMinute += 1
+        return true
+    }
+
+    // ---- API ----
     func fetchQuotes(for pair: String) async throws -> [MarketQuote] {
-        guard checkRateLimit() else { return [] }
+        guard await checkRateLimit() else { return [] }
 
         return try await withThrowingTaskGroup(of: MarketQuote.self) { group in
             for adapter in adapters {
-                group.addTask {
-                    try await adapter.fetchTicker(pair: pair)
-                }
+                group.addTask { try await adapter.fetchTicker(pair: pair) }
             }
-
             var results: [MarketQuote] = []
-            for try await quote in group {
-                results.append(quote)
-            }
+            for try await quote in group { results.append(quote) }
             return results
         }
     }
 
-    func findOpportunities(for pair: String, minProfit: Double = 0) async throws -> [ArbitrageOpportunity] {
+    func findOpportunities(for pair: String, minProfit: Double = 0) async throws -> [ArbOpportunity] {
+        guard await isSubscribed(.standard) else { return [] }
         let quotes = try await fetchQuotes(for: pair)
-        return findOpportunities(quotes: quotes, minProfit: minProfit)
-    }
-
-    func findOpportunities(quotes: [MarketQuote], minProfit: Double = 0) -> [ArbitrageOpportunity] {
-        var opportunities: [ArbitrageOpportunity] = []
-        let grouped = Dictionary(grouping: quotes, by: { $0.tokenPair })
-
-        for (pair, pairQuotes) in grouped {
-            for buy in pairQuotes {
-                for sell in pairQuotes {
-                    guard buy.exchange != sell.exchange else { continue }
-                    let profit = sell.price - buy.price
-                    if profit >= minProfit {
-                        opportunities.append(
-                            ArbitrageOpportunity(
-                                tokenPair: pair,
-                                buyExchange: buy.exchange,
-                                sellExchange: sell.exchange,
-                                buyPrice: buy.price,
-                                sellPrice: sell.price
-                            )
-                        )
-                    }
-                }
-            }
-        }
-
-        return opportunities
-    }
-
-    func advancedAnalytics(quotes: [MarketQuote]) -> Double? {
-        guard subscriptionManager.isSubscribed(to: .premium) else { return nil }
-        let prices = quotes.map { $0.price }
-        guard !prices.isEmpty else { return nil }
-
-        let mean = prices.reduce(0, +) / Double(prices.count)
-        let variance = prices.reduce(0) { $0 + pow($1 - mean, 2) } / Double(prices.count)
-        return sqrt(variance) // Standard deviation
-    }
-
-    private func checkRateLimit() -> Bool {
-        if Date().timeIntervalSince(lastReset) > 60 {
-            requestsThisMinute = 0
-            lastReset = Date()
-        }
-
-        requestsThisMinute += 1
-        let limit = subscriptionManager.rateLimit(for: subscriptionManager.currentTier)
-        return requestsThisMinute <= limit
+        return ArbDetector.detect(quotes: quotes, minProfit: minProfit)
     }
 }
