@@ -121,9 +121,10 @@ final class DashboardViewModel: ObservableObject {
         do {
             let pair = "ETH/DAI"
             let fetched = try await service.fetchQuotes(for: pair)
+            let detected = service.findOpportunities(quotes: fetched)
             await MainActor.run {
                 self.quotes = fetched
-                self.opportunities = service.findOpportunities(quotes: fetched)
+                self.opportunities = detected
             }
         } catch {
             print("Failed to fetch quotes: \(error)")

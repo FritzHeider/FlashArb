@@ -15,3 +15,10 @@ public struct ArbitrageOpportunity: Identifiable, Hashable, Sendable {
     /// Percentage spread expressed as a fraction (0.01 = 1%).
     public var spread: Double { (sellPrice - buyPrice) / buyPrice }
 }
+
+public typealias ArbitrageOpportunity = ArbOpportunity
+
+public extension ArbOpportunity {
+    var tokenPair: String { pair }
+    var profit: Double { spread }
+}
