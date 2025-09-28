@@ -1,17 +1,19 @@
 import Foundation
 
-public struct ArbOpportunity: Identifiable, Hashable, Sendable {
+public struct ArbitrageOpportunity: Identifiable, Hashable, Sendable {
     public let id = UUID()
-    public let pair: String
+    public let tokenPair: String
     public let buyExchange: String
     public let sellExchange: String
     public let buyPrice: Double
     public let sellPrice: Double
     public let timestamp: Date
 
-    public var spread: Double { sellPrice - buyPrice }
-    /// e.g. 0.012 = 1.2%
-    public var spreadPct: Double { (sellPrice - buyPrice) / buyPrice }
+    /// Absolute profit between the buy and sell legs.
+    public var profit: Double { sellPrice - buyPrice }
+
+    /// Percentage spread expressed as a fraction (0.01 = 1%).
+    public var spread: Double { (sellPrice - buyPrice) / buyPrice }
 }
 
 public typealias ArbitrageOpportunity = ArbOpportunity
