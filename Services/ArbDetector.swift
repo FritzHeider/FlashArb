@@ -2,9 +2,8 @@ import Foundation
 
 enum ArbDetector {
     /// `minProfit` is a fraction (0.01 = 1%)
-    static func detect(quotes: [MarketQuote], minProfit: Double) -> [ArbOpportunity] {
+    static func detect(quotes: [MarketQuote], minProfit: Double) -> [ArbitrageOpportunity] {
         guard quotes.count >= 2 else { return [] }
-        /Users/space/FlashArb/Services/ArbDetector.swift:5:70 'ArbOpportunity' is ambiguous for type lookup in this context
 
         // best buy = lowest price, best sell = highest price across exchanges
         guard let bestBuy  = quotes.min(by: { $0.price < $1.price }),
@@ -15,8 +14,8 @@ enum ArbDetector {
         guard spreadPct >= minProfit else { return [] }
 
         return [
-            ArbOpportunity(
-                pair: bestBuy.tokenPair,
+            ArbitrageOpportunity(
+                tokenPair: bestBuy.tokenPair,
                 buyExchange: bestBuy.exchange,
                 sellExchange: bestSell.exchange,
                 buyPrice: bestBuy.price,
