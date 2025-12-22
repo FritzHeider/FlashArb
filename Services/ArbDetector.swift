@@ -2,7 +2,7 @@ import Foundation
 
 enum ArbDetector {
     /// `minProfit` is a fraction (0.01 = 1%)
-    static func detect(quotes: [MarketQuote], minProfit: Double) -> [ArbitrageOpportunity] {
+    static func detect(quotes: [MarketQuote], minProfit: Double) -> [ArbOpportunity] {
         guard quotes.count >= 2 else { return [] }
 
         // best buy = lowest price, best sell = highest price across exchanges
@@ -13,15 +13,13 @@ enum ArbDetector {
         let spreadPct = (bestSell.price - bestBuy.price) / bestBuy.price
         guard spreadPct >= minProfit else { return [] }
 
-        return [
-            ArbitrageOpportunity(
-                tokenPair: bestBuy.tokenPair,
-                buyExchange: bestBuy.exchange,
-                sellExchange: bestSell.exchange,
-                buyPrice: bestBuy.price,
-                sellPrice: bestSell.price,
-                timestamp: Date()
-            )
-        ]
+        return [ArbOpportunity(
+            tokenPair: bestBuy.tokenPair,
+            buyExchange: bestBuy.exchange,
+            sellExchange: bestSell.exchange,
+            buyPrice: bestBuy.price,
+            sellPrice: bestSell.price,
+            timestamp: Date()
+        )]
     }
 }
